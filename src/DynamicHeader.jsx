@@ -25,8 +25,10 @@ const DynamicHeader = () => {
     if (!headerData) {
         return null;
     }
+    console.log(headerData)
 
     const { sitelogo, sitetitle, favicon, ogtitle, ogdescription, ogimage } = headerData;
+    console.log(sitelogo)
 
     return (
         <>
@@ -38,7 +40,7 @@ const DynamicHeader = () => {
                 <meta property="og:image" content={ogimage || 'default-og-image.png'} />
             </Helmet>
             <div>DynamicHeader</div>
-            {sitelogo && <img id="site-logo" src={sitelogo} alt="Site Logo" />}
+            {ogimage && <img id="site-logo" src={`https://bouboulena.com/admin/${ogimage}`} alt="Site Logo" />}
         </>
     );
 };
